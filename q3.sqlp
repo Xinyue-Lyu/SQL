@@ -11,3 +11,4 @@ GROUP BY r.`#text`
 ORDER BY count(*) DESC;
 
 --Duration of all jobs: 1.716 sec
+--For each religion return the number of countries where it occurs; order them in decreasing number of countries.
