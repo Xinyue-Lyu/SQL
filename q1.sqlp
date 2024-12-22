@@ -5,4 +5,11 @@ FROM geo.world x, x.mondial.country y, y.province z,
 WHERE y.name='Peru'
 ORDER BY u.name;
 
+--Retrieve the names of all cities located in Peru, sorted alphabetically. 
 --Duration of all jobs: 2.081 sec
+
+--Write SQL++ queries over the semi-structured data model implemented in AsterixDB. 
+--Run queries over the Mondial database, a geographical dataset aggregated from multiple sources. 
+--The dataset in ADM format, converted from the XML format available online, for use in AsterixDB.
+
+
