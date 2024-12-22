@@ -8,3 +8,5 @@ LET religions = (CASE WHEN y.religions IS MISSING
 ORDER BY y.name;
 
 --Duration of all jobs: 2.342 sec
+--For each country, return its name, its population, and the number of religions sorted alphabetically by country. 
+--Report 0 religions for countries without religions. 
