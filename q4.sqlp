@@ -10,3 +10,4 @@ GROUP BY e.`#text`;
 
 
 --Duration of all jobs: 1.487 sec
+--For each ethnic group, return the number of countries where it occurs, as well as the total population world-wide of that group.
