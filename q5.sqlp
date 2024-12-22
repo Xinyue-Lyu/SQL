@@ -24,3 +24,5 @@ WHERE
 ORDER BY array_count(seas) DESC;
 
 --Duration of all jobs: 0.875 sec
+--Find all countries bordering two or more seas. Here you need to join the "sea" collection with the "country" collection. 
+--Return the code, its name, and the list of bordering seas, in decreasing order of the number of seas. 
