@@ -1,0 +1,26 @@
+SELECT
+    y.`-car_code` as country_code,
+    y.name as country_name,
+    (   SELECT s.name as sea
+        FROM
+            geo.world x,
+            x.mondial.sea s
+        WHERE
+            y.`-car_code` IN split(s.`-country`, ' ')
+    ) seas
+FROM
+    geo.world x,
+    x.mondial.country y,
+    (   SELECT code
+        FROM
+            geo.world x,
+            x.mondial.sea s,
+            split(s.`-country`, ' ') code
+        GROUP BY code
+        HAVING count(s.`-id`) > 1
+    ) c
+WHERE
+    y.`-car_code` = c.code
+ORDER BY array_count(seas) DESC;
+
+--Duration of all jobs: 0.875 sec

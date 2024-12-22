@@ -1,0 +1,12 @@
+SELECT
+    e.`#text` AS  ethnic_group,
+    count(*) AS num_countries,
+    sum(float(e.`-percentage`) * float(y.population)) AS total_population
+FROM
+    geo.world x,
+    x.mondial.country y,
+    CASE WHEN is_array(y.ethnicgroups) THEN y.ethnicgroups ELSE CASE WHEN y.ethnicgroups IS VALUED THEN [y.ethnicgroups] ELSE [] END END e
+GROUP BY e.`#text`;
+
+
+--Duration of all jobs: 1.487 sec

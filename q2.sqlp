@@ -1,0 +1,10 @@
+SELECT y.name as country, y.population as population, strict_count(religions) as num_religions
+FROM geo.world x, x.mondial.country y
+LET religions = (CASE WHEN y.religions IS MISSING
+                      THEN []
+                      WHEN is_array(y.religions)
+                      THEN y.religions
+                      ELSE [y.religions] END)
+ORDER BY y.name;
+
+--Duration of all jobs: 2.342 sec
